@@ -8,31 +8,18 @@ import {
 
 class List extends Component {
   render() {
-    return (
-      <ListGroup>
-        <ListGroupItem>
-          <ListGroupItemHeading>To-do 1</ListGroupItemHeading>
-          <ListGroupItemText>
-            Donec id elit non mi porta gravida at eget metus. Maecenas sed diam
-            eget risus varius blandit.
+    const listItems = this.props.listData.map((item, index) => {
+      return (
+        <ListGroupItem className="list-group-item-action" key={index}>
+          <ListGroupItemHeading>{item.name}</ListGroupItemHeading>
+          <ListGroupItemText className="mb-1">
+            {item.description}
           </ListGroupItemText>
         </ListGroupItem>
-        <ListGroupItem>
-          <ListGroupItemHeading>To-do 2</ListGroupItemHeading>
-          <ListGroupItemText>
-            Donec id elit non mi porta gravida at eget metus. Maecenas sed diam
-            eget risus varius blandit.
-          </ListGroupItemText>
-        </ListGroupItem>
-        <ListGroupItem>
-          <ListGroupItemHeading>To-do 3</ListGroupItemHeading>
-          <ListGroupItemText>
-            Donec id elit non mi porta gravida at eget metus. Maecenas sed diam
-            eget risus varius blandit.
-          </ListGroupItemText>
-        </ListGroupItem>
-      </ListGroup>
-    );
+      );
+    });
+
+    return <ListGroup>{listItems}</ListGroup>;
   }
 }
 
