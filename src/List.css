@@ -1,0 +1,16 @@
+button {
+  padding: 0;
+  font-size: 1.25rem;
+  line-height: 0;
+  color: #007bff;
+  background-color: transparent;
+  border: 0;
+}
+
+button:hover {
+  color: #4da3ff;
+}
+
+button:focus {
+  outline: none;
+}
